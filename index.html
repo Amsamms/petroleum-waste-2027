@@ -122,6 +122,10 @@
         <span>Never landfill. Never burn by default.</span>
       </div>
     </div>
+
+    <div class="flowloop reveal" aria-hidden="true">
+      <canvas id="flowCanvas" width="560" height="320"></canvas>
+    </div>
   </div>
 </section>
 
@@ -141,6 +145,60 @@
     </div>
 
     <div class="stream-grid" id="streamGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== SIMULATOR ===================== -->
+<section class="section simulator" id="simulator">
+  <div class="container">
+    <p class="section-tag reveal">Try It</p>
+    <h2 class="reveal">Try the decision layer.</h2>
+    <p class="lead reveal">Pick any stream. The layer identifies it, reads what is inside, chooses a route, names the recovery method, flags the hazards, and logs it to the mandatory hazardous-waste register. Run a few and watch the register fill up.</p>
+
+    <div class="sim-grid reveal">
+      <div class="sim-pick">
+        <h3>Pick a stream <span>(click to run)</span></h3>
+        <div class="sim-chips" id="simChips"></div>
+      </div>
+      <div class="sim-out">
+        <h3>Decision layer <span>console</span></h3>
+        <div class="console">
+          <div class="console-bar">
+            <span class="cdot r"></span><span class="cdot y"></span><span class="cdot g"></span>
+            <span class="ctitle">decision-layer / live</span>
+          </div>
+          <div class="console-body" id="console">
+            <p class="console-empty">Click a stream on the left to run the decision layer.</p>
+          </div>
+        </div>
+        <div class="sim-routelights" aria-hidden="true">
+          <div class="routelight r1" id="lightR1">
+            <h4>Route 1</h4><p>Hand to a recoverer who pays.</p>
+          </div>
+          <div class="routelight r2" id="lightR2">
+            <h4>Route 2</h4><p>Reclaim and reprocess on site.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="register reveal">
+      <div class="register-head">
+        <h3>Hazardous-waste register</h3>
+        <span class="register-count" id="regCount">0 of 16 streams logged</span>
+        <button class="register-clear" id="regClear" type="button">Clear register</button>
+      </div>
+      <div class="register-wrap">
+        <table class="reg-table">
+          <thead>
+            <tr><th>#</th><th>Stream</th><th>Contains</th><th>Route</th><th>Recovery method</th><th>Status</th></tr>
+          </thead>
+          <tbody id="regBody">
+            <tr class="reg-empty"><td colspan="6">No streams logged yet. Run a stream above to add the first row.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </section>
 
